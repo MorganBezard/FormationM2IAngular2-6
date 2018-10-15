@@ -1,9 +1,11 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { RouterModule } from '@angular/router';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { AppComponent } from './app.component';
-import { LoginModule } from './login/login.module';
 import { UiModule } from './ui/ui.module';
+import { AppRoutingModule } from './app-routing.module';
+
 
 
 @NgModule({
@@ -13,8 +15,8 @@ import { UiModule } from './ui/ui.module';
   imports: [
     BrowserModule,
     UiModule,
-    LoginModule,
-    NgbModule.forRoot()
+    NgbModule.forRoot(),
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

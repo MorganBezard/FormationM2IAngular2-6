@@ -1,11 +1,13 @@
 import { CommonModule } from '@angular/common';
 import { NgModule } from '@angular/core';
-import { PagevideComponent } from './containers/pagevide/pagevide.component';
+import { LoginComponent } from './containers/login/login.component';
 
 @NgModule({
   imports: [
     CommonModule
   ],
-  declarations: [PagevideComponent]
+  declarations: [LoginComponent],
+  exports: [LoginComponent]
+
 })
 export class LoginModule { }
