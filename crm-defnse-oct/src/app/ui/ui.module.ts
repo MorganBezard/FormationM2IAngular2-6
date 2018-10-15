@@ -9,6 +9,7 @@ import { UiComponent } from './containers/ui/ui.component';
   imports: [
     CommonModule
   ],
-  declarations: [UiComponent, HeaderComponent, NavComponent, FooterComponent]
+  declarations: [UiComponent, HeaderComponent, NavComponent, FooterComponent],
+  exports: [UiComponent]
 })
 export class UiModule { }
