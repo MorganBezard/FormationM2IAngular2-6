@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 import { LoginComponent } from './login/containers/login/login.component';
 
 
@@ -8,12 +8,11 @@ const appRoutes: Routes = [
     redirectTo: '/login',
     pathMatch: 'full'
   },
-  { path: 'login', component: LoginComponent },
   {
     path: 'prestations',
-    loadChildren: './prestation/prestations.module#PrestationsModule',
+    loadChildren: './prestations/prestations.module#PrestationsModule',
   },
-      {
+  {
       path: '**',
       loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule',
     },
@@ -24,7 +23,10 @@ const appRoutes: Routes = [
   imports: [
     RouterModule.forRoot(
       appRoutes,
-      { enableTracing: true } // <-- debugging purposes only
+      {
+        // enableTracing: true,
+        preloadingStrategy: PreloadAllModules }, // <-- debugging purposes only
+
     )
 
   ],

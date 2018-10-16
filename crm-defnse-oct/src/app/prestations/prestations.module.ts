@@ -10,4 +10,4 @@ import { PrestationsRoutingModule } from './prestations-routing.module';
   ],
   declarations: [PrestationsComponent]
 })
-export class PrestationModule { }
+export class PrestationsModule { }
