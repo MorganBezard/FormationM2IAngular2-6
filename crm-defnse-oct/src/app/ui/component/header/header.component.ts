@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   public title = 'crm la defense';
   faBars = faBars;
   faUser = faUser;
+  public open = true;
   constructor() { }
 
   ngOnInit() {

@@ -6,13 +6,15 @@ import { ClientComponent } from './components/client/client.component';
 import { ClientsComponent } from './containers/clients/clients.component';
 import { ListeClientsComponent } from './liste-clients/liste-clients/liste-clients.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { TemplatesModule } from '../templates/templates.module';
 
 @NgModule({
   imports: [
     CommonModule,
     ClientsRoutingModule,
     SharedModule,
-    FontAwesomeModule
+    FontAwesomeModule,
+    TemplatesModule
 
   ],
   declarations: [ClientsComponent, ListeClientsComponent, ClientComponent]
