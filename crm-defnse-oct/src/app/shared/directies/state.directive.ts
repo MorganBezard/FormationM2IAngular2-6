@@ -1,16 +1,17 @@
-import { Directive, HostBinding, Input, OnInit } from '@angular/core';
+import { Directive, HostBinding, Input, OnChanges } from '@angular/core';
 
 @Directive({
   selector: '[appState]'
 })
-export class StateDirective implements OnInit {
+export class StateDirective implements OnChanges {
 
   @Input() appState: string;
   @HostBinding('class') nomClass: string;
   constructor() {
   }
 
-  ngOnInit() {
+  // tslint:disable-next-line:use-life-cycle-interface
+  ngOnChanges() {
     console.log(this.appState);
     this.nomClass = this.formatClass(this.appState);
   }

@@ -1,7 +1,5 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
-import { LoginComponent } from './login/containers/login/login.component';
-
 
 const appRoutes: Routes = [
   { path: '',
@@ -12,6 +10,10 @@ const appRoutes: Routes = [
     path: 'prestations',
     loadChildren: './prestations/prestations.module#PrestationsModule',
   },
+  {
+      path: 'clients',
+      loadChildren: './clients/clients.module#ClientsModule',
+    },
   {
       path: '**',
       loadChildren: './page-not-found/page-not-found.module#PageNotFoundModule',

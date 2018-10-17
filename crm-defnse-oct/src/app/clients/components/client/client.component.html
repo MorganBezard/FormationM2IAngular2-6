@@ -1,0 +1,15 @@
+<tr>
+    <th>{{ item.id }}</th>
+    <th>{{ item.nom }}</th>
+    <td>{{ item.adresse }}</td>
+    <td>{{ item.codePostal }}</td>
+    <td>{{ item.ville }}</td>
+    <td [appState]="item.state">
+      <select (change)="changeState($event)">
+        <option [value]="item.state">{{ item.state }}</option>
+        <ng-container *ngFor="let state of states">
+          <option *ngIf="item.state !== state" [value]="state">{{ state }}</option>
+        </ng-container>
+      </select>
+    </td>
+  </tr>
