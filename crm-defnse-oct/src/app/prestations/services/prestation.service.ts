@@ -27,8 +27,12 @@ export class PrestationService {
     item.state = state;
   }
 
-  // add item in collection
+  // delete item in collection
+  public delete(item: Prestation): void {
+    console.log('item deleted');
+  }
 
+  // add item in collection
 
   // get item by id
 }

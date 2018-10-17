@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { Clients } from 'src/app/shared/models/clients';
 
+
 @Component({
   selector: 'app-liste-clients',
   templateUrl: './liste-clients.component.html',
@@ -25,6 +26,7 @@ export class ListeClientsComponent implements OnInit {
       'Code Postal',
       'Ville',
       'Etat',
+      'Delete'
     ];
   }
 

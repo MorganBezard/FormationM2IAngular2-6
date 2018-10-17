@@ -12,7 +12,6 @@ export class StateDirective implements OnChanges {
 
   // tslint:disable-next-line:use-life-cycle-interface
   ngOnChanges() {
-    console.log(this.appState);
     this.nomClass = this.formatClass(this.appState);
   }
   private formatClass(state: string): string {

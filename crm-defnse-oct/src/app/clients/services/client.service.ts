@@ -12,18 +12,23 @@ export class ClientService {
     this._collection = fakeCollection;
   }
 
-    // get collection
-    public get collection(): Clients[] {
-      return this._collection;
-    }
+  // get collection
+  public get collection(): Clients[] {
+    return this._collection;
+  }
 
-    // set collection
-    public set collection(col: Clients[]) {
-      this._collection = col;
-    }
+  // set collection
+  public set collection(col: Clients[]) {
+    this._collection = col;
+  }
 
-    // update item in collection
-    public update(item: Clients, state: ClientState) {
-      item.state = state;
-    }
+  // delete item in collection
+  public delete(item: Clients): void {
+    console.log('item deleted');
+  }
+
+  // update item in collection
+  public update(item: Clients, state: ClientState) {
+    item.state = state;
+  }
 }

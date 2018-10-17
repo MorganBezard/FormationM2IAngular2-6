@@ -25,7 +25,8 @@ export class ListePrestationsComponent implements OnInit {
       'Tjm Ht',
       'Total Ht',
       'Total TTC',
-      'Action'
+      'Action',
+      'Delete'
     ];
   }
 

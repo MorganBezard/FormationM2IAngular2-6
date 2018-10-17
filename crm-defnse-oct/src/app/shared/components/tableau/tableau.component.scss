@@ -11,3 +11,8 @@
 .state-actif {
   background: $palette-color-four;
 }
+
+td:last-child,
+th:last-child {
+  text-align: center
+}
