@@ -1,5 +1,5 @@
 <app-tableau [headers]="headers">
-    <app-prestation *ngFor="let presta of collection" [item]="presta"></app-prestation>
+    <app-prestation *ngFor="let presta of collection$ | async" [item]="presta"></app-prestation>
     <app-add-row txt="prestation"></app-add-row>
 </app-tableau>
 

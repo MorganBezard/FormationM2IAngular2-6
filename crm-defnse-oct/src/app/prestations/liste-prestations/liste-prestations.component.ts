@@ -20,7 +20,7 @@ export class ListePrestationsComponent implements OnInit, OnDestroy {
   ) { }
 
   ngOnInit() {
-    // this.collection = this.prestationService.collection$;
+    this.collection$ = this.prestationService.collection$;
 // this.sub = this.prestationService.collection$.subscribe((data) => {
 //   this.collection$ = data;
 // });
@@ -37,7 +37,7 @@ export class ListePrestationsComponent implements OnInit, OnDestroy {
   }
 
   ngOnDestroy() {
-    this.sub.unsubscribe();
+  //  this.sub.unsubscribe();
   }
 
 }

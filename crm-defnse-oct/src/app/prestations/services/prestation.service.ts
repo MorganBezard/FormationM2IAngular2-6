@@ -39,23 +39,36 @@ export class PrestationService {
     this._collection$ = col;
   }
 
-  // update item in collection
-  public update(item: Prestation, state?: State) {
+  add(item: Prestation): Promise<any> {
+    const id = this.afs.createId();
+    const prestation = { id, ...item };
+    return this.itemsCollection.doc(id).set(prestation).catch((e) => {
+      console.log(e);
+    });
+    // return this.http.post('urlapi/prestations', item);
+  }
+
+
+  update(item: Prestation, state?: State): Promise<any> {
+    const presta  = {...item};
     if (state) {
-      item.state = state;
+      presta.state = state;
     }
+    return this.itemsCollection.doc(item.id).update(presta).catch((e) => {
+      console.log(e);
+    });
+    // return this.http.patch('urlapi/prestations/'+item.id, presta);
   }
 
-  // delete item in collection
-  public delete(item: Prestation): void {
-    console.log('item deleted');
+  public delete(item: Prestation): Promise<any> {
+    return this.itemsCollection.doc(item.id).delete().catch((e) => {
+      console.log(e);
+    });
+    // return this.http.delete(`urlapi/prestations/${item.id}`);
   }
 
-  // add item in collection
-
-  public add(item: Prestation): void {
-    // this.collection.push(new Prestation (item));
+  getPrestation(id: string): Observable<Prestation> {
+    return this.itemsCollection.doc<Prestation>(id).valueChanges();
+    // return this.http.get(`urlaspi/prestations/${id}`);
   }
-
-  // get item by id
 }

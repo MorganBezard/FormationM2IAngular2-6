@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ClientService } from '../../services/client.service';
 import { Clients } from 'src/app/shared/models/clients';
+import { Observable } from 'rxjs';
 
 
 @Component({
@@ -10,7 +11,8 @@ import { Clients } from 'src/app/shared/models/clients';
 })
 export class ListeClientsComponent implements OnInit {
 
-  public collection: Clients[];
+
+  public collection$: Observable<Clients[]>;
   public headers: string[];
 
   constructor(
@@ -18,7 +20,7 @@ export class ListeClientsComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.collection = this.clientService.collection;
+    this.collection$ = this.clientService.collection$;
     this.headers = [
       'ID',
       'Nom',
