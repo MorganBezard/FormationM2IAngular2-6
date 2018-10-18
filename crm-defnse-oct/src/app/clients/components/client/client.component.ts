@@ -37,8 +37,7 @@ export class ClientComponent implements OnInit {
 
   public getDetail() {
     this.router.navigate(['detail'], {relativeTo: this.route});
-    this.clientService.item = this.item;
-    console.log(this.clientService.item);
+    this.clientService.item.next(this.item);
 
   }
 

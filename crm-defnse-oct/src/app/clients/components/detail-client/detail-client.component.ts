@@ -14,7 +14,9 @@ export class DetailClientComponent implements OnInit {
   ) { }
 
   ngOnInit() {
-    this.item = this.cs.item;
+    this.cs.item.subscribe((data) => {
+      this.item = data;
+    });
   }
 
 }
