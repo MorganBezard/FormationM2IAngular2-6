@@ -1,8 +1,9 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 import { ClientState } from 'src/app/shared/enums/client-state.enum';
 import { Clients } from 'src/app/shared/models/clients';
 import { ClientService } from '../../services/client.service';
-import { faTrashAlt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-client',
@@ -16,7 +17,9 @@ export class ClientComponent implements OnInit {
 
 
   constructor(
-    private clientService: ClientService
+    private clientService: ClientService,
+    private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit() {
@@ -30,6 +33,13 @@ export class ClientComponent implements OnInit {
 
   public delete() {
     this.clientService.delete(this.item);
+  }
+
+  public getDetail() {
+    this.router.navigate(['detail'], {relativeTo: this.route});
+    this.clientService.item = this.item;
+    console.log(this.clientService.item);
+
   }
 
 }

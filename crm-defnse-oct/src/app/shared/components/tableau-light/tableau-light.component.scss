@@ -1,0 +1,8 @@
+@import '~src/variables';
+
+:host-context(app-template-a) .table-responsive {
+  border: 5px solid $palette-color-one;
+}
+:host-context(app-template-b) .table-responsive {
+  border: 5px solid $palette-color-two;
+}

@@ -1,15 +1,18 @@
 import { Injectable } from '@angular/core';
-import { fakeCollection } from './fake-collection-client';
 import { ClientState } from 'src/app/shared/enums/client-state.enum';
 import { Clients } from 'src/app/shared/models/clients';
+import { fakeCollection } from './fake-collection-client';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ClientService {
   private _collection: Clients[];
+  public item: Clients;
+
   constructor() {
     this._collection = fakeCollection;
+    this.item = this._collection[0];
   }
 
   // get collection

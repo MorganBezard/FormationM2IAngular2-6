@@ -7,6 +7,8 @@ import { ClientsComponent } from './containers/clients/clients.component';
 import { ListeClientsComponent } from './liste-clients/liste-clients/liste-clients.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { TemplatesModule } from '../templates/templates.module';
+import { DetailClientComponent } from './components/detail-client/detail-client.component';
+import { AccordeonComponent } from './components/accordeon/accordeon.component';
 
 @NgModule({
   imports: [
@@ -17,6 +19,6 @@ import { TemplatesModule } from '../templates/templates.module';
     TemplatesModule
 
   ],
-  declarations: [ClientsComponent, ListeClientsComponent, ClientComponent]
+  declarations: [ClientsComponent, ListeClientsComponent, ClientComponent, DetailClientComponent, AccordeonComponent]
 })
 export class ClientsModule { }

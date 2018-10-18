@@ -1,3 +1,16 @@
 <app-template-a title="Clients">
+
     <app-liste-clients></app-liste-clients>
-</app-template-a>
+
+    <ul class="nav">
+      <li class="nav-link">
+        <a [routerLink]="['detail']" routerLinkActive="active" >Détail</a>
+      </li>
+      <li class="nav-link">
+        <a [routerLink]="['accordeon']" routerLinkActive="active" >Accordéon</a>
+      </li>
+    </ul>
+
+    <router-outlet></router-outlet>
+
+  </app-template-a>
