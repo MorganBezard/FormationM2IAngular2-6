@@ -8,7 +8,7 @@
 # dependencies
 /node_modules
 
-/src/environments/environments.firebase
+/src/environments/environment.firebase
 
 # IDEs and editors
 /.idea
