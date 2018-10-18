@@ -21,10 +21,14 @@ export class PrestationComponent implements OnInit {
 
   public changeState(e: any) {
     const state = e.target.value;
-    this.prestationService.update(this.item, state);
+    this.prestationService.update(this.item, state).then((data) => {
+      this.item.state = state;
+    });
   }
 
   public delete() {
-    this.prestationService.delete(this.item);
-  }
+    this.prestationService.delete(this.item).then((data) => {
+      // afficher un message ou retour de l'api
+  });
+}
 }

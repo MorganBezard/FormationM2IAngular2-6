@@ -19,8 +19,10 @@ export class AddPrestationComponent implements OnInit {
   }
 
   public add(item: Prestation): void {
-    this.prestationService.add(item);
+    this.prestationService.add(item).then((data) => {
+    // if and else when using your api to redirect or display msg
     this.router.navigate(['prestations']);
-  }
+  });
 
+}
 }
