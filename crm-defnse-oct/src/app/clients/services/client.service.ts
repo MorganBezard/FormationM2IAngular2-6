@@ -63,7 +63,7 @@ export class ClientService {
     // return this.http.delete(`urlapi/prestations/${item.id}`);
   }
 
-  getPrestation(id: string): Observable<Clients> {
+  getClients(id: string): Observable<Clients> {
     return this.itemsCollection.doc<Clients>(id).valueChanges();
     // return this.http.get(`urlaspi/prestations/${id}`);
   }

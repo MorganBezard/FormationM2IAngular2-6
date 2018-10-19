@@ -11,35 +11,34 @@ import { ClientService } from '../../services/client.service';
   styleUrls: ['./client.component.scss']
 })
 export class ClientComponent implements OnInit {
-  @Input() item: Clients;
+  @Input()
+  item: Clients;
   public states = Object.values(ClientState);
   faTrashAlt = faTrashAlt;
-
 
   constructor(
     private clientService: ClientService,
     private router: Router,
     private route: ActivatedRoute
-  ) { }
+  ) {}
 
-  ngOnInit() {
-  }
+  ngOnInit() {}
 
   public changeState(e: any) {
-
     const state = e.target.value;
-    this.clientService.update(this.item, state).then((data) => {
-      this.item.state = state; });
+    this.clientService.update(this.item, state).then(data => {
+      this.item = state;
+    });
   }
 
-  public delete() {
-    this.clientService.delete(this.item);
+  public deleteState() {
+    this.clientService.delete(this.item).then(() => {
+      // commentaire bidon
+    });
   }
 
   public getDetail() {
-    this.router.navigate(['detail'], {relativeTo: this.route});
+    this.router.navigate(['detail'], { relativeTo: this.route });
     this.clientService.item.next(this.item);
-
   }
-
 }

@@ -24,5 +24,9 @@ export class AddPrestationComponent implements OnInit {
     this.router.navigate(['prestations']);
   });
 
+//    this.prestationService.add(item).subscribe((data) => {
+//    // if and else when using your api to redirect or display msg
+//    this.router.navigate(['prestations']);
+//  });
 }
 }

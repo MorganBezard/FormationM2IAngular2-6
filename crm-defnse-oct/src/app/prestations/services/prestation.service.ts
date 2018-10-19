@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection } from '@angular/fire/firestore';
 import { Observable } from 'rxjs';
@@ -15,7 +16,8 @@ export class PrestationService {
 
 
   constructor(
-    private afs: AngularFirestore
+    private afs: AngularFirestore,
+    private http: HttpClient
   ) {
     this.itemsCollection = afs.collection<Prestation>('prestation');
     this.collection$ = this.itemsCollection.valueChanges().pipe(
@@ -27,6 +29,9 @@ export class PrestationService {
       // })
     );
     // this.collection = fakeCollection;
+//    this.http.get<Prestation>('url_api/prestations').pipe(
+//      map((data) => data.map ( item => new Prestation(item)))
+  //  );
   }
 
   // get collection

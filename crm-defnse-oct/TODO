@@ -1,3 +1,22 @@
 
 Todo:
   ☐ alt s start, alt d done, alt c cancel, alt enter cocher case
+
+
+
+  creer une route pour edit avec id et un resolve
+  creation du service resolve
+    recuperer l'id passe dans la route
+    injecter PrestationService
+    dans la methode resolve, appeler getPrestation de PrestationService en lui passant l'id
+    return le resultat de la requete si data recuperee
+    sinon return false et router.navigate vers liste des prestations
+  sur editComponent.ts
+    recuperer dans router l'objet que le resolbe a retourné (dans data)
+    passer cet objet à app-form via @Input()
+  sur form-reactive.ts
+    transformer init en @Input() pour recuperer l'objet passé depuis editComponent
+    envoyer au parent editComponent un Output() (existe deja) attention id perdu)
+  sur editComponent.ts
+    ajouter item.id (recuperer plus tot dans paramMap) dans la fn update()
+    utiliser la methode update() du service PrestationService et lui passer un obj avec id

@@ -24,11 +24,18 @@ export class PrestationComponent implements OnInit {
     this.prestationService.update(this.item, state).then((data) => {
       this.item.state = state;
     });
+//    this.prestationService.update(this.item, state).subscribe((data) => {
+//      this.item.state = state;
+//    });
+// don't forget to unsub
   }
 
   public delete() {
-    this.prestationService.delete(this.item).then((data) => {
+    this.prestationService.delete(this.item).then(() => {
       // afficher un message ou retour de l'api
   });
+  //   this.prestationService.delete(this.item).subscribe(() => {
+  //     // afficher un message ou retour de l'api
+  // });
 }
 }
